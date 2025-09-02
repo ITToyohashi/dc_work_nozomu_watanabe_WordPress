@@ -1,0 +1,7 @@
+URL：https://portfolio02.dc-itex.com/toyohashi/0002/wp/
+FTPユーザー名：toyohashi0002@dc-itex.com
+共通パスワード（FTPパスワード・WordPress管理者パスワード）：J8gG9m4P
+BASIC認証パスワード：Y2tDq3bQ
+データベース名：xb513874_icde1
+MySQLユーザー名：xb513874_km0bw
+MySQLパスワード：2eewgdz8oo
