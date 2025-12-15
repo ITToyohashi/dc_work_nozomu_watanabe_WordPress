@@ -3,6 +3,13 @@
         <div id="contents">
             <div id="cont_left">
                 <div class="information">
+
+                    <div class="breadcrumb">
+                      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
+                      <span> &gt; </span>
+                      <span><?php single_cat_title(); ?></span>
+                    </div>
+
                     <h2>Blog</h2>
                     <dl>
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

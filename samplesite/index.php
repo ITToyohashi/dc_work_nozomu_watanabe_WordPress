@@ -1,11 +1,6 @@
 
 <?php get_header(); ?>
-<div class="">
-<?php if(function_exists('bcn_display'))
-{
-bcn_display();
-}?>
-</div>
+
     <div id="slide">
         <ul class="slide-inner">
             <li></li>
@@ -49,36 +44,24 @@ bcn_display();
                 </div>
 
                 <div class="information">
-                    
                     <h2>BLOG</h2>
+                    
                     <dl>
-                        <dt>2020-08-04</dt>
+                    <?php
+                    $blogPosts = get_posts('numberposts=4&category=16,15');
+                    foreach ($blogPosts as $post) :
+                        setup_postdata($post);
+                    ?>
+                        <dt><?php the_time('Y-m-d'); ?></dt>
                         <dd>
-                        <div class="b_img">
-    	                    <img src="<?php echo get_template_directory_uri(); ?>/images/sample.jpg">
+                        <div class="b_img"><?php the_post_thumbnail('thumbside'); ?></div>
+                        <div class="b_right">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </div>
-                         <div class="b_right">
-                        <a href="<?php echo home_url(); ?>/sample.html">社長通信</a>
-                         </div></dd>
-
-                        <dt>2020-08-02</dt>
-                        <dd>
-                        <div class="b_img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sample.jpg">
-                        </div>
-                         <div class="b_right">
-                        <a href="<?php echo home_url(); ?>/sample.html">社員紹介</a>
-                         </div></dd>
-
-                        <dt>2020-08-01</dt>
-                        <dd>
-                        <div class="b_img">
-    	                    <img src="<?php echo get_template_directory_uri(); ?>/images/sample.jpg">
-                        </div>
-                         <div class="b_right">
-                        <a href="<?php echo home_url(); ?>/sample.html">セミナー開催報告</a>
-                         </div></dd>
+                        </dd>
+                    <?php endforeach; wp_reset_postdata(); ?>
                     </dl>
+                    
                 </div>
             </div>
                 <?php get_sidebar(); ?>

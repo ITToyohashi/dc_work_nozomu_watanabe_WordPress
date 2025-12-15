@@ -2,11 +2,6 @@
 <html lang="ja">
   <head>
   <meta charset="UTF-8">
-  <?php if ( is_home() || is_front_page() ) : ?>
-    <title><?php bloginfo('name'); ?></title>
-  <?php else : ?>
-    <title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
-  <?php endif; ?>
 
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>

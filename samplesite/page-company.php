@@ -3,6 +3,13 @@
     <div id="cont_first" class="container">
         <div id="contents">
             <div id="cont_left">
+
+                <div class="breadcrumb">
+                  <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
+                  <span> &gt; </span>
+                  <span>会社概要</span>
+                </div>
+
                 <h2>会社概要</h2>
                 <table>
     	            <tr>
@@ -42,4 +49,4 @@
 
         </div>
     </div>
-<?php get_footer(); ?>	
+<?php get_footer(); ?>
