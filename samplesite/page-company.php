@@ -1,14 +1,16 @@
 <?php get_header(); ?>
 
+<?php
+/* Template Name: 会社概要 */
+?>
+
     <div id="cont_first" class="container">
         <div id="contents">
             <div id="cont_left">
 
-                <div class="breadcrumb">
-                  <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
-                  <span> &gt; </span>
-                  <span>会社概要</span>
-                </div>
+            <div class="">
+                <?php if (function_exists('bcn_display')) { bcn_display(); } ?>
+            </div>
 
                 <h2>会社概要</h2>
                 <table>

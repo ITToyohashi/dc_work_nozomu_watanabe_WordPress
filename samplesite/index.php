@@ -30,17 +30,32 @@
             <div id="cont_left">
                 <div class="information">
                     <h2>INFORMATION</h2>
+                    
                     <dl>
-                        <?php $infoPosts = get_posts('numberposts=4&category=1,14,15,16'); foreach($infoPosts as $post): ?> 
-                            <dt><?php the_time('Y-m-d'); ?></dt>
-                            <dd>
-                                <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>"> 
-                                <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?> </span>
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
-                            </dd>
-                        
-                        <?php endforeach; ?>
+                    <?php
+                        $infoPosts = get_posts('numberposts=4&category=16,15');
+                        foreach ($infoPosts as $post) :
+                        setup_postdata($post);
+                    ?>
+                        <dt><?php the_time('Y-m-d'); ?></dt>
+                        <dd>
+                        <?php
+                            $cats = get_the_category();
+                            $cat  = $cats ? $cats[0] : null;
+                        ?>
+                        <?php if ($cat) : ?>
+                            <span class="tab tag_<?php echo esc_attr($cat->slug); ?>">
+                            <?php echo esc_html($cat->cat_name); ?>
+                            </span>
+                        <?php endif; ?>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
+                        </dd>
+                    <?php
+                        endforeach;
+                        wp_reset_postdata();
+                    ?>
                     </dl>
+
                 </div>
 
                 <div class="information">
@@ -48,8 +63,8 @@
                     
                     <dl>
                     <?php
-                    $blogPosts = get_posts('numberposts=4&category=16,15');
-                    foreach ($blogPosts as $post) :
+                        $blogPosts = get_posts('numberposts=4&category=14');
+                        foreach ($blogPosts as $post) :
                         setup_postdata($post);
                     ?>
                         <dt><?php the_time('Y-m-d'); ?></dt>
@@ -59,7 +74,10 @@
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </div>
                         </dd>
-                    <?php endforeach; wp_reset_postdata(); ?>
+                    <?php
+                        endforeach;
+                        wp_reset_postdata();
+                    ?>
                     </dl>
                     
                 </div>

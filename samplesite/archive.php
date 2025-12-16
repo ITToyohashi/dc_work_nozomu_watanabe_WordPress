@@ -20,6 +20,8 @@
                     <?php endwhile; endif; ?>
                     </dl>
 
+                    <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+
                 </div>
                 <div class="information">
                     <h2>INFORMATION</h2>
@@ -41,7 +43,9 @@
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
                             </dd>
                         <?php endwhile; endif; ?>
-                        </dl>
+                    </dl>
+
+                    <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
                 </div>
             </div>
