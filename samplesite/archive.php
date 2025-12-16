@@ -23,19 +23,26 @@
                 </div>
                 <div class="information">
                     <h2>INFORMATION</h2>
+
                     <dl>
-
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <dt><?php the_time('Y-m-d'); ?></dt>
-                        <dd>
-                            <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>"> 
-                                <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?> </span>
-                                
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
-                        </dd>
-                        <?php endwhile; endif; ?>
+                            <dt><?php the_time('Y-m-d'); ?></dt>
+                            <dd>
+                            <?php
+                                $cats = get_the_category();          // get_ は「取得」(配列で返る)
+                                $cat  = $cats ? $cats[0] : null;     // 先頭カテゴリを使う
+                            ?>
+                            <?php if ($cat) : ?>
+                                <span class="tab tag_<?php echo esc_attr($cat->slug); ?>">
+                                <?php echo esc_html($cat->cat_name); ?>
+                                </span>
+                            <?php endif; ?>
 
-                    </dl>
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
+                            </dd>
+                        <?php endwhile; endif; ?>
+                        </dl>
+
                 </div>
             </div>
             	<?php get_sidebar(); ?>

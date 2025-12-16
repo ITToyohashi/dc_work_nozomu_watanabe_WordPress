@@ -22,9 +22,9 @@
                 </div>
                 <div class="top-navColumn top-navColumn_right">
                     <h2>COMPANY</h2>
-                    <div class="top-navPhoto"><a href="<?php echo home_url(); ?>/company.html"><img src="<?php echo get_template_directory_uri(); ?>/images/photo03.jpg" alt=""  width="460" /></a></div>
+                    <div class="top-navPhoto"><a href="<?php echo home_url(); ?>/company"><img src="<?php echo get_template_directory_uri(); ?>/images/photo03.jpg" alt=""  width="460" /></a></div>
                     <p>会社情報をご紹介します。</p>
-                    <p class="top-navDetail"><a href="<?php echo home_url(); ?>/company.html">MORE</a></p>
+                    <p class="top-navDetail"><a href="<?php echo home_url(); ?>/company">MORE</a></p>
                 </div>
             </div>
             <div id="cont_left">
