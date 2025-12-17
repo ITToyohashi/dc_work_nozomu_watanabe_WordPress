@@ -24,7 +24,7 @@
       });
   });
   </script>
-  <title>SAMPLE SITE</title>
+  
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
   <?php wp_head(); ?>
   </head>
