@@ -33,7 +33,7 @@
                     
                     <dl>
                     <?php
-                        $infoPosts = get_posts('numberposts=4&category=16,15');
+                        $infoPosts = get_posts('numberposts=4&category=1,16,15');
                         foreach ($infoPosts as $post) :
                         setup_postdata($post);
                     ?>

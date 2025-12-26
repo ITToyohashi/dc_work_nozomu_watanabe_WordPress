@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 
 <div id="cont_first" class="container">
+  
+      <?php if ( function_exists( 'bcn_display' ) ) : ?>
+      <div class="breadcrumb">
+        <?php bcn_display(); ?>
+      </div>
+      <?php endif; ?>
+      
   <div id="contents">
     <div id="cont_left">
 

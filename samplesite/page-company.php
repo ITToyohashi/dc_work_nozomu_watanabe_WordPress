@@ -5,45 +5,46 @@
 ?>
 
     <div id="cont_first" class="container">
+        
+            <?php if ( function_exists( 'bcn_display' ) ) : ?>
+            <div class="breadcrumb">
+                <?php bcn_display(); ?>
+            </div>
+            <?php endif; ?>
+
         <div id="contents">
             <div id="cont_left">
 
-            <div class="">
-                <?php if (function_exists('bcn_display')) { bcn_display(); } ?>
-            </div>
-
                 <h2>会社概要</h2>
                 <table>
-    	            <tr>
-    					<th>会社名</th>
-    		            <td>Sample site</td>
-    	            </tr>
+                    <tr>
+                        <th>会社名</th>
+                        <td><?php the_field( 'add_company' ); ?></td>
+                    </tr>
                     <tr>
                         <th>本社</th>
-                        <td>〒000-0000<br>
-                            東京都架空区1-2-3-4-5
-                        </td>
+                        <td><?php the_field( 'add_address' ); ?></td>
                     </tr>
                     <tr>
                         <th>設立</th>
-                        <td>2015年1月1日</td>
+                        <td><?php the_field( 'add_established' ); ?></td>
                     </tr>
                     <tr>
                         <th>資本金</th>
-                        <td>2000万円 （2020年3月31日現在）</td>
+                        <td><?php the_field( 'add_capital' ); ?></td>
                     </tr>
                     <tr>
                         <th>従業員数</th>
-                        <td><?php the_field('add_member'); ?></td>
+                        <td><?php the_field( 'add_member' ); ?></td>
                     </tr>
                     <tr>
                         <th>電話番号</th>
-                        <td><?php the_field('add_tel'); ?></td>
+                        <td><?php the_field( 'add_tel' ); ?></td>
                     </tr>
-    	            <tr>
-    					<th>代表者</th>
-    		            <td>サンプル太郎</td>
-    	            </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td><?php the_field( 'add_ceo' ); ?></td>
+                    </tr>
                 </table>
             </div>
 
